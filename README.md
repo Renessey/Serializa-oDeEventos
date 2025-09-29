@@ -1,4 +1,4 @@
-# Projeto Category – PROVA P1
+# Projeto Category 
 
 Este projeto implementa a **entidade `Category`** com funcionalidades de **serialização** e **eventos de domínio**, seguindo conceitos de **Domain-Driven Design (DDD)** e boas práticas de Python.
 
