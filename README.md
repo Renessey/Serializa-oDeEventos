@@ -28,3 +28,23 @@ Permite converter a entidade para dicionário e reconstruí-la posteriormente.
 ```python
 cat_dict = cat.to_dict()
 cat_copy = Category.from_dict(cat_dict)
+
+### 2. Eventos de Domínio
+
+Eventos que registram ações importantes da entidade.
+
+Eventos implementados:
+
+CategoryCreated
+
+CategoryUpdated
+
+CategoryActivated
+
+CategoryDeactivated
+
+Cada evento armazena dados relevantes, como category_id, timestamp e campos alterados (changed_fields).
+
+Exemplo de registro de evento:
+
+self.events.append(CategoryActivated(self.id, datetime.now()))
