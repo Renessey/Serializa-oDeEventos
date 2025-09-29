@@ -1,22 +1,30 @@
-# PROVA P1 - PARTE 2
+# Projeto Category – PROVA P1
 
-Este repositório contém a implementação da **entidade `Category`** com funcionalidades avançadas de **serialização** e **eventos de domínio**, conforme solicitado na Prova P1 – Parte 2.
+Este projeto implementa a **entidade `Category`** com funcionalidades de **serialização** e **eventos de domínio**, seguindo conceitos de **Domain-Driven Design (DDD)** e boas práticas de Python.
 
-O projeto foi desenvolvido utilizando **Python**, **dataclasses**, e conceitos de **Domain-Driven Design (DDD)**.
+Ele foi desenvolvido como parte da **Prova P1 – Parte 2**, incluindo testes de criação, atualização e gerenciamento de eventos.
 
 ---
 
-## Funcionalidades Ministradas
+## Objetivo do Projeto
 
-### 1. `@staticmethod`
-- Um método estático é um método que **não depende da instância** da classe.
-- Pode ser chamado diretamente pela classe, sem precisar criar um objeto.
-- Exemplo:
+- Evoluir a entidade `Category` adicionando:
+  1. **Serialização**: exportar e reconstruir a entidade de forma simples.
+  2. **Eventos de Domínio**: registrar acontecimentos importantes no ciclo de vida da categoria (criação, atualização, ativação/desativação).
+- Demonstrar conceitos de **@staticmethod, dataclasses, decoradores e DDD**.
+
+---
+
+## Funcionalidades Implementadas
+
+### 1. Serialização
+Permite converter a entidade para dicionário e reconstruí-la posteriormente.
+
+- **`to_dict()`**: retorna um dicionário com todos os atributos da entidade, incluindo `class_name`.
+- **`from_dict(data)`**: cria uma instância de `Category` a partir de um dicionário.
+
+**Exemplo de uso:**
 
 ```python
-class MathHelper:
-    @staticmethod
-    def add(a, b):
-        return a + b
-
-print(MathHelper.add(5, 3))  # Saída: 8
+cat_dict = cat.to_dict()
+cat_copy = Category.from_dict(cat_dict)
